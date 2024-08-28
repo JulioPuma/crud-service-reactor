@@ -2,17 +2,11 @@ package com.template.springproject.services;
 
 import com.template.springproject.model.User;
 import com.template.springproject.util.MemoryDataBase;
-import io.reactivex.rxjava3.core.Completable;
-import io.reactivex.rxjava3.core.Maybe;
-import io.reactivex.rxjava3.core.Observable;
-import io.reactivex.rxjava3.core.Single;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
-import java.util.NoSuchElementException;
+import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
 import java.util.Optional;
 
 @Service
@@ -22,27 +16,27 @@ public class UserService {
 
     private final MemoryDataBase memoryDataBase;
 
-    public Observable<User> getUsers() {
-        return Observable.fromIterable(memoryDataBase.findAll());
+    public Flux<User> getUsers() {
+        return Flux.fromIterable(memoryDataBase.findAll());
     }
 
 
-    public Single<User> getUser (Integer userId) {
-        return Single.just(memoryDataBase.findById(userId));
+    public Mono<User> getUser (Integer userId) {
+        return Mono.just(memoryDataBase.findById(userId));
     }
 
 
-    public Single<User> createUser(User user) {
-        return Single.just(memoryDataBase.save(user));
+    public Mono<User> createUser(User user) {
+        return Mono.just(memoryDataBase.save(user));
     }
 
 
-    public Single<User> updateUser(User user) {
-        return Single.just(memoryDataBase.update(user));
+    public Mono<User> updateUser(User user) {
+        return Mono.just(memoryDataBase.update(user));
     }
 
 
-    public Single<User> patchUser(User user) {
+    public Mono<User> patchUser(User user) {
 
         return getUser(user.getId())
                 .map(userFromDB -> fillUser(userFromDB, user))
@@ -50,8 +44,8 @@ public class UserService {
     }
 
 
-    public Completable deleteUser(Integer userId) {
-        return Completable.fromAction(() -> memoryDataBase.deleteById(userId));
+    public Mono<Void> deleteUser(Integer userId) {
+        return Mono.fromRunnable(() -> memoryDataBase.deleteById(userId));
     }
 
 

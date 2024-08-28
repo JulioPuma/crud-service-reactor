@@ -1,6 +1,6 @@
-#  CRUD service using RXJava3
+#  CRUD service using Project Reactor
 
-CRUD Project with RXJava3 managing reactive flows. Database was created internally.
+CRUD Project with Project Reactor to managing reactive flows. Database was created internally.
 
 Extra: Using Exception Handler using @ControllerAdvice and @ExceptionHandler
 
@@ -10,25 +10,24 @@ Extra: Using Exception Handler using @ControllerAdvice and @ExceptionHandler
 
 <img src="docs/markdown/java17-logo.png" alt="logo" style="height: 50px; width:100px;"/>
 <img src="docs/markdown/springboot.png" alt="logo" style="height: 50px; width:100px;"/>
-<img src="docs/markdown/reactiveX.png" alt="logo" style="height: 50px; width:100px; background-color:white" />
+<img src="docs/markdown/project-reactor.png" alt="logo" style="height: 50px; width:100px; background-color:white" />
 
 ## Postman Collection
 
 Click the link below to download the Postman collection:
 
-[Download Postman Collection](docs/crud-service-rxjava.postman_collection.json)
+[Download Postman Collection](docs/crud-service-reactor.postman_collection.json)
 
 1. Download the file from the link above.
 2. Open Postman.
 3. Click "Import" in the top left corner.
-4. Select the downloaded `crud-service-rxjava.postman_collection.json` file.
+4. Select the downloaded `crud-service-reactor.postman_collection.json` file.
 5. You can now test the API endpoints using the provided examples.
 
 ## Dependencies
 
-- spring-boot-starter-web
+- spring-boot-starter-webflux
 - lombok
-- RxJava3
 
 ## Package
 

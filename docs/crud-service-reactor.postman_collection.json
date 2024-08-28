@@ -1,7 +1,7 @@
 {
 	"info": {
-		"_postman_id": "66465fa2-eb44-4bd7-ae59-cd53d71b9367",
-		"name": "crud-service-rxjava",
+		"_postman_id": "dc29a395-c6ca-4f2a-badd-b73bab45aadf",
+		"name": "crud-service-reactor",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "4999882"
 	},
